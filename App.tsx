@@ -1,37 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TextInput } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Button, SafeAreaView } from 'react-native';
 import React, {useState} from 'react';
+import RootNavigator from './navigation/RootNavigation';
+import { useNavigation } from '@react-navigation/native';
 
-export default function App() {
+const App = () => {
   return (
-    <View style={styles.container}>
-      <ParentComponent/>
+    <SafeAreaView style={styles.container}>
       <StatusBar style="auto" />
-    </View>
-  );
-}
-
-const ParentComponent = () => {
-  const [name, setName] = useState('KhoiLe');
-
-  const handleNameChanged = (newName) => {
-    setName(newName);
-  };
-
-  return(
-    <View>
-      <ChildComponent name={name} onNameChanged={handleNameChanged}/>
-      <Text>My name is {name}</Text>     
-    </View>
-  );
-}
-
-const ChildComponent = (props) => {
-  return (
-    <View>
-      <Text>Enter your name: </Text>
-      <TextInput style = {styles.textInput} value={props.name} onChangeText={props.onNameChanged} />
-    </View>
+      <RootNavigator/>
+    </SafeAreaView>
   );
 }
 
@@ -50,3 +28,5 @@ const styles = StyleSheet.create({
     borderRadius: 10
   },
 });
+
+export default App;
