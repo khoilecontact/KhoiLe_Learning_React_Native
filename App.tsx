@@ -1,10 +1,20 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TextInput, Button, SafeAreaView } from 'react-native';
-import React, {useState} from 'react';
+import React, {useEffect} from 'react';
 import RootNavigator from './navigation/RootNavigation';
-import { useNavigation } from '@react-navigation/native';
 
 const App = () => {
+
+  useEffect(() => {
+    console.log("App mounted");
+  });
+
+  useEffect(() => {
+    return () => {
+      console.log("App unmounted");
+    }
+  });
+
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar style="auto" />
@@ -17,8 +27,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
   textInput: {
     height: 40, 

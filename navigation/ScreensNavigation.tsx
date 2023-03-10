@@ -20,9 +20,6 @@ const ScreensStack = () => {
             <Screens.Screen
                 name="ScreenTwo"
                 component={ScreenTwo}
-                options={{
-                    headerShown: false,
-                }}
             />
         </Screens.Navigator>
     )
