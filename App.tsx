@@ -1,12 +1,23 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { ScrollView, StyleSheet, Text, View, SafeAreaView } from 'react-native';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
+    <SafeAreaView style={styles.container}>
+      <ScrollView>
+        <Text style={styles.text}>Item 1</Text>
+        <Text style={styles.text}>Item 2</Text>
+        <Text style={styles.text}>Item 3</Text>
+        <Text style={styles.text}>Item 4</Text>
+        <Text style={styles.text}>Item 5</Text>
+        <Text style={styles.text}>Item 6</Text>
+        <Text style={styles.text}>Item 7</Text>
+        <Text style={styles.text}>Item 8</Text>
+        <Text style={styles.text}>Item 9</Text>
+        <Text style={styles.text}>Item 10</Text>
+      </ScrollView>
       <StatusBar style="auto" />
-    </View>
+    </SafeAreaView>
   );
 }
 
@@ -16,5 +27,15 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  text: {
+    fontSize: 20,
+    padding: 10,
+    color: 'white',
+    margin: 10,
+    borderRadius: 20,
+    borderWidth: 1,
+    backgroundColor: 'blue',
+    overflow: 'hidden'
   },
 });
